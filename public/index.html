@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Family Chat - Dark Mode</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="/manifest.json" />
+
+</head>
+<body>
+
+  <div id="loginScreen" class="login-screen">
+    <div class="login-box">
+      <h2>Login</h2>
+      <input id="usernameInput" type="text" placeholder="Enter your name" autocomplete="off" />
+      <input id="passwordInput" type="password" placeholder="Enter password" autocomplete="off" />
+      <button id="loginBtn">Login</button>
+      <p id="loginError" class="error-text"></p>
+    </div>
+  </div>
+
+  <div id="chatApp" class="chat-layout hidden">
+
+    <aside class="sidebar" id="sidebar">
+      <header>
+        Contacts
+        <button id="closeSidebarBtn" class="hamburger" aria-label="Close contacts panel">✕</button>
+      </header>
+      <ul id="userList"></ul>
+    </aside>
+
+    <main class="chat-main">
+      <header class="chat-header">
+        <button id="openSidebarBtn" class="hamburger" aria-label="Open contacts panel">☰</button>
+        Family Chat
+      </header>
+
+      <div id="messages" class="chat-messages"></div>
+      <div id="typingIndicator" class="typing-indicator"></div>
+
+      <form id="chat-form" class="chat-input-container" autocomplete="off">
+        <input
+          id="messageInput"
+          type="text"
+          placeholder="Type your message..."
+          autocomplete="off"
+          required
+        />
+        <button type="submit">Send</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
