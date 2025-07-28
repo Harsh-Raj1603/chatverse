@@ -1,6 +1,6 @@
 const express = require('express');
 const http = require('http');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 const socketIO = require('socket.io');
 const cors = require('cors');
 require('dotenv').config();
@@ -15,9 +15,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('✅ MongoDB Connected'))
-  .catch(err => console.log(err));
+// mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+//   .then(() => console.log('✅ MongoDB Connected'))
+//   .catch(err => console.log(err));
 
 const users = {}; // { socketId: { name } }
 const userSockets = {}; // { name: socketId }
